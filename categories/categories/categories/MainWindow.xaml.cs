@@ -70,5 +70,9 @@ namespace WpfApp1
         {
             this.WindowState = WindowState.Maximized;
         }
+        private void NormalButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+        }
     }
 }

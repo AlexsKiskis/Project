@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Приложение" Height="880" Width="1380" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+        Title="Приложение" Height="900" Width="1440" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Window.Background>
 
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -134,20 +134,18 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="480"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="375"/>
-            <RowDefinition Height="375"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="380"/>
+            <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
 
-
-
-        <Grid Name="brow" Grid.Column="1" Grid.Row="0">
+        <Grid Name="brow" Grid.Column="1" Grid.Row="0" MouseDown="ToolBar_MouseDown">
             <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,460,0,460,10" Width="460"></Polygon>
         </Grid>
 
@@ -181,6 +179,22 @@
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
+
+                    </Image.Style>
+
+                </Image>
+
+                <Image Name="NormalButton" Margin="5,5,0,5" Height="20" Width="20" MouseDown="NormalButton_MouseDown">
+
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="\Resources\normaloff.jpg"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=NormalButton}" Value="True">
+                                    <Setter Property="Source" Value="\Resources\normalon.jpg"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
                     </Image.Style>
 
                 </Image>
@@ -210,6 +224,20 @@
             <Label Content="heathen" HorizontalAlignment="Center" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
             <Label Content="e n t e r t a i m e n t" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
 
+        </Grid>
+
+        <Grid Name="border0" Grid.Row="0" MouseDown="ToolBar_MouseDown">
+            <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
+        </Grid>
+
+        <Grid Name="border1" Grid.Row="1" Grid.Column="0" MouseDown="ToolBar_MouseDown">
+            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,0,450"/>
+        </Grid>
+        <Grid Name="border2" Grid.Row="1" Grid.Column="1" MouseDown="ToolBar_MouseDown">
+            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,0,0"/>
+        </Grid>
+        <Grid Name="border3" Grid.Row="1" Grid.Column="2" MouseDown="ToolBar_MouseDown">
+            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,450,0"/>
         </Grid>
 
 
