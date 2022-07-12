@@ -242,7 +242,7 @@
         </Border>
 
         <TextBox x:Name="tb1" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,0,25,0" VerticalAlignment="Center" TextChanged="tb1_TextChanged"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Введите ваш логин" Grid.Row="2" Margin="40,66,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="Normal" FontStyle="Normal" FontFamily="Times New Roman">
+        <TextBlock IsHitTestVisible="False" FontSize="16" Text="Введите ваш логин" Grid.Row="2" Margin="40,66,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="Normal" FontStyle="Normal" FontFamily="Times New Roman">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -256,7 +256,7 @@
         </TextBlock>
 
         <TextBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,80,25,0" VerticalAlignment="Bottom"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,123,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman">
+        <TextBlock IsHitTestVisible="False" FontSize="16" Text="Введите ваш пароль" Grid.Row="2" Margin="40,123,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -317,7 +317,30 @@
                 </ControlTemplate>
             </CheckBox.Template>
         </CheckBox>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="5" Text="Регистрация" FontFamily="Time New Roman" FontSize="14" FontWeight="DemiBold">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Foreground" Value="#FF373737"/>
+                    <Style.Triggers>
 
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="White" Duration="0:0:0.300"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF373737" Duration="0:0:0.300"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
     </Grid>
 
 </Window>

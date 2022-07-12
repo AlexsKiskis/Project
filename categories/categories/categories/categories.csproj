@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -93,6 +94,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\turnon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\closeoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\closeon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stayin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\turnoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\maxoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\maxon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

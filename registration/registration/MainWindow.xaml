@@ -185,7 +185,7 @@
 
         </Grid>
 
-        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,43,0,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
+        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -234,13 +234,13 @@
 
             </Border.Style>
 
-            <Button Content="Зарегистрироваться" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Зарегистрироваться" FontWeight="DemiBold" FontFamily="Time New Roman" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
 
 
         <TextBox x:Name="tb1" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,20,25,0" VerticalAlignment="Top" TextChanged="tb1_TextChanged" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,30,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="Normal" FontStyle="Normal" FontFamily="Times New Roman" Height="16">
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,30,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontStyle="Normal" FontFamily="Times New Roman" Height="16">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -253,7 +253,7 @@
             </TextBlock.Style><Run Text="Придумайте логин"/></TextBlock>
 
         <TextBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,80,25,0" VerticalAlignment="Top" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,89,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" Height="16">
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,90,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -267,7 +267,7 @@
 
 
         <TextBox x:Name="tb3" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,138,25,0" VerticalAlignment="Top" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,147,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" Height="16">
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,148,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -279,7 +279,7 @@
                 </Style>
             </TextBlock.Style><Run Text="Повторите пароль"></Run></TextBlock>
         <TextBox x:Name="tb4" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,195,25,0" VerticalAlignment="Top" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,204,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" Height="16">
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,205,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -291,6 +291,31 @@
                 </Style>
             </TextBlock.Style><Run Text="Ваш email адрес"/></TextBlock>
 
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="5" Text="Регистрация" FontFamily="Time New Roman" FontSize="16" FontWeight="DemiBold">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Foreground" Value="#FF373737"/>
+                    <Style.Triggers>
+
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF00FF4A" Duration="0:0:0.200"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF373737" Duration="0:0:0.200"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        
     </Grid>
 
 </Window>

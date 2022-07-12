@@ -1,0 +1,16 @@
+E:\Desktop\Projeсt\categories\categories\categories\bin\Debug\categories.exe.config
+E:\Desktop\Projeсt\categories\categories\categories\bin\Debug\categories.exe
+E:\Desktop\Projeсt\categories\categories\categories\bin\Debug\categories.pdb
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.csproj.AssemblyReference.cache
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.csproj.SuggestedBindingRedirects.cache
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\MainWindow.g.cs
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\App.g.cs
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories_MarkupCompile.cache
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories_MarkupCompile.lref
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\MainWindow.baml
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.g.resources
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.Properties.Resources.resources
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.csproj.GenerateResource.cache
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.csproj.CoreCompileInputs.cache
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.exe
+E:\Desktop\Projeсt\categories\categories\categories\obj\Debug\categories.pdb
