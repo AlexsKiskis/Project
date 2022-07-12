@@ -1,0 +1,16 @@
+E:\Desktop\Projeсt\input\input\input\bin\Debug\input.exe.config
+E:\Desktop\Projeсt\input\input\input\bin\Debug\input.exe
+E:\Desktop\Projeсt\input\input\input\bin\Debug\input.pdb
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.csproj.AssemblyReference.cache
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.csproj.SuggestedBindingRedirects.cache
+E:\Desktop\Projeсt\input\input\input\obj\Debug\MainWindow.g.cs
+E:\Desktop\Projeсt\input\input\input\obj\Debug\App.g.cs
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input_MarkupCompile.cache
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input_MarkupCompile.lref
+E:\Desktop\Projeсt\input\input\input\obj\Debug\MainWindow.baml
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.g.resources
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.Properties.Resources.resources
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.csproj.GenerateResource.cache
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.csproj.CoreCompileInputs.cache
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.exe
+E:\Desktop\Projeсt\input\input\input\obj\Debug\input.pdb
