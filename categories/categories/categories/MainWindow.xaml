@@ -46,7 +46,7 @@
 
                                     <Storyboard>
 
-                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.100" To="5,5,5,5"/>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.03" To="10,10,10,10"/>
 
                                     </Storyboard>
 
@@ -83,23 +83,28 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="480"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="320"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="110"/>
-            <RowDefinition Height="380"/>
-            <RowDefinition Height="380"/>
+            <RowDefinition/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
 
-        <Grid Name="brow" Grid.Column="1" Grid.Row="0" MouseDown="ToolBar_MouseDown">
+        <Grid Name="brow" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" MouseDown="ToolBar_MouseDown">
             <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,460,0,460,10" Width="460"></Polygon>
         </Grid>
 
-        <Grid Name="ToolBar" Grid.Column="3"  Background="Transparent" Grid.Row="0" MouseDown="ToolBar_MouseDown">
+        <Grid Name="ToolBar" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="5"  Background="Transparent" MouseDown="ToolBar_MouseDown">
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
@@ -169,10 +174,10 @@
 
         </Grid>
 
-        <Grid Name="LogoContainer" Background="Transparent" Grid.Column="1" Grid.Row="1" MouseDown="LogoContainer_MouseDown">
+        <Grid Name="LogoContainer" Background="Transparent" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" MouseDown="LogoContainer_MouseDown">
 
             <Label Content="Glossary" HorizontalAlignment="Center" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
-            <Label Content="topic selection" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
+            <Label Content="choose a theme" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
 
         </Grid>
 
@@ -180,7 +185,7 @@
             <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
         </Grid>
 
-        <Border Grid.Row="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="5" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -229,11 +234,11 @@
 
             </Border.Style>
 
-            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Добавить категорию" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_3"></Button>
 
         </Border>
 
-        <Border Grid.Row="2" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="5" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -282,11 +287,11 @@
 
             </Border.Style>
 
-            <Button Content="Семья и друзья" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Еда и напитки" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_2"></Button>
 
         </Border>
 
-        <Border Grid.Row="2" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="5" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -335,11 +340,11 @@
 
             </Border.Style>
 
-            <Button Content="Еда и напитки" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Действия и движения" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="3" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -392,7 +397,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="3" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -441,11 +446,11 @@
 
             </Border.Style>
 
-            <Button Content="Добавить категорию" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_1"></Button>
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="3" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -494,10 +499,11 @@
 
             </Border.Style>
 
-            <Button Content="Пройти тест" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Семья и друзья" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
 
     </Grid>
+
 
 </Window>

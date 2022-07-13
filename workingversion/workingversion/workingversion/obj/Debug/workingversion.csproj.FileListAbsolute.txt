@@ -20,3 +20,5 @@ E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\Windo
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowLanguages.baml
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.g.cs
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.baml
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowTest.g.cs
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowTest.baml

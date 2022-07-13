@@ -1,0 +1,16 @@
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\bin\Debug\pageoftest.exe.config
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\bin\Debug\pageoftest.exe
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\bin\Debug\pageoftest.pdb
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.csproj.AssemblyReference.cache
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.csproj.SuggestedBindingRedirects.cache
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\MainWindow.g.cs
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\App.g.cs
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest_MarkupCompile.cache
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest_MarkupCompile.lref
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\MainWindow.baml
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.g.resources
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.Properties.Resources.resources
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.csproj.GenerateResource.cache
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.csproj.CoreCompileInputs.cache
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.exe
+E:\Desktop\Projeсt\pageoftest\pageoftest\pageoftest\obj\Debug\pageoftest.pdb
