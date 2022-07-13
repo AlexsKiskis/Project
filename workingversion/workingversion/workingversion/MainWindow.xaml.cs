@@ -10,20 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace workingversion
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow2 : Window
+    public partial class MainWindow : Window
     {
-        public MainWindow2()
+        public MainWindow()
         {
             InitializeComponent();
         }
-
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();

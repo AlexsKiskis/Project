@@ -19,10 +19,38 @@
 
     <Window.Resources>
 
+        <Style x:Key="fontcolor" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#FF373737"/>
+        </Style>
+
+        <Style x:Key="Reg" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="110" />
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Reg" SnapsToDevicePixels="True" Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsFocused" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="ComboboxButton" TargetType="Button">
 
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
             <Setter Property="Template">
 
 
@@ -180,12 +208,12 @@
 
         <Grid Name="LogoContainer" Background="Transparent" Grid.Row="1" MouseDown="LogoContainer_MouseDown">
 
-            <Label Content="heathen" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
+            <Label Content="Glossary" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
             <Label Content="e n t e r t a i m e n t" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
 
         </Grid>
 
-        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
+        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="25,5,25,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -234,7 +262,7 @@
 
             </Border.Style>
 
-            <Button Content="Зарегистрироваться" FontWeight="DemiBold" FontFamily="Time New Roman" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Регистрация" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
 
@@ -278,6 +306,7 @@
                     </Style.Triggers>
                 </Style>
             </TextBlock.Style><Run Text="Повторите пароль"></Run></TextBlock>
+       
         <TextBox x:Name="tb4" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,195,25,0" VerticalAlignment="Top" Height="35"/>
         <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,205,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
             <TextBlock.Style>
@@ -291,31 +320,9 @@
                 </Style>
             </TextBlock.Style><Run Text="Ваш email адрес"/></TextBlock>
 
-        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="5" Text="Регистрация" FontFamily="Time New Roman" FontSize="16" FontWeight="DemiBold">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Foreground" Value="#FF373737"/>
-                    <Style.Triggers>
+        <Button Content="Войти" Margin="0,45,0,0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="16" Style="{StaticResource Reg}">
 
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF00FF4A" Duration="0:0:0.200"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF373737" Duration="0:0:0.200"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        
+        </Button>
     </Grid>
 
 </Window>

@@ -14,5 +14,9 @@ E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\worki
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.CoreCompileInputs.cache
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\workingversion.exe
 E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\workingversion.pdb
-E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\Window1.g.cs
-E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\Window1.baml
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowInput.g.cs
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowInput.baml
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowLanguages.g.cs
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowLanguages.baml
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.g.cs
+E:\Desktop\Projeсt\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.baml

@@ -15,6 +15,7 @@
             <GradientStop Color="#FFA9FFC6" Offset="0.36"/>
             <GradientStop Color="#FF7AE4FF" Offset="0.69"/>
         </LinearGradientBrush>
+        
     </Window.Background>
 
     <Window.Resources>
@@ -23,6 +24,7 @@
 
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
             <Setter Property="Template">
 
 
@@ -44,7 +46,7 @@
 
                                     <Storyboard>
 
-                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.100" To="2,2,0,0"/>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.100" To="5,5,5,5"/>
 
                                     </Storyboard>
 
@@ -73,58 +75,6 @@
                 </Setter.Value>
 
             </Setter>
-
-        </Style>
-
-        <Style x:Key="Tb" TargetType="TextBox">
-
-            <Setter Property="Background" Value="#FFFFE6C1"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Foreground" Value="#FF373737"/>
-            <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
-            <Setter Property="Padding" Value="10,0,0,0"/>
-
-
-            <Setter Property="Template">
-
-                <Setter.Value>
-
-                    <ControlTemplate TargetType="TextBox">
-
-                        <Grid x:Name="Root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
-
-                            <Border x:Name="Background" BorderThickness="2" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
-
-                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}" IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
-
-                        </Grid>
-
-                        <ControlTemplate.Triggers>
-
-                            <Trigger Property="IsMouseOver" Value="True">
-
-                                <Setter Property="Background" Value="#FFFDD7AE"/>
-                                <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
-
-                            </Trigger>
-
-                            <Trigger Property="IsFocused" Value="True">
-
-                                <Setter Property="BorderBrush" Value="White"/>
-                                <Setter Property="Background" Value="#FFFDD7AE"/>
-
-                            </Trigger>
-
-                        </ControlTemplate.Triggers>
-
-                    </ControlTemplate>
-
-                </Setter.Value>
-
-            </Setter>
-
-
 
         </Style>
 
@@ -221,8 +171,8 @@
 
         <Grid Name="LogoContainer" Background="Transparent" Grid.Column="1" Grid.Row="1" MouseDown="LogoContainer_MouseDown">
 
-            <Label Content="heathen" HorizontalAlignment="Center" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
-            <Label Content="e n t e r t a i m e n t" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
+            <Label Content="Glossary" HorizontalAlignment="Center" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
+            <Label Content="topic selection" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
 
         </Grid>
 
@@ -230,16 +180,323 @@
             <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
         </Grid>
 
-        <Grid Name="border1" Grid.Row="1" Grid.Column="0" MouseDown="ToolBar_MouseDown">
-            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,0,450"/>
-        </Grid>
-        <Grid Name="border2" Grid.Row="1" Grid.Column="1" MouseDown="ToolBar_MouseDown">
-            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,0,0"/>
-        </Grid>
-        <Grid Name="border3" Grid.Row="1" Grid.Column="2" MouseDown="ToolBar_MouseDown">
-            <Border BorderThickness="0,0,0,15" BorderBrush="#FF8CF7AB" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,450,0"/>
-        </Grid>
+        <Border Grid.Row="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
 
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Семья и друзья" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Еда и напитки" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Растения и животные" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Добавить категорию" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Пройти тест" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+
+        </Border>
 
     </Grid>
 

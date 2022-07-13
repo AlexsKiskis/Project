@@ -10,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace workingversion
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для WindowLanguages.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowLanguages : Window
     {
-        public MainWindow()
+        public WindowLanguages()
         {
             InitializeComponent();
         }
-
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
@@ -35,6 +33,15 @@ namespace WpfApp1
             this.WindowState = WindowState.Minimized;
         }
 
+        private void MaxButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
+
+        private void NormalButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+        }
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -51,19 +58,6 @@ namespace WpfApp1
             }
         }
 
-        private void tb1_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Tgb_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0FD68D4E-348F-4081-8E79-019033371699}</ProjectGuid>
+    <ProjectGuid>{0A0FC72A-56DD-435C-81D1-C3DE90399DD8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>workingversion</RootNamespace>
     <AssemblyName>workingversion</AssemblyName>
@@ -56,8 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="WindowCategories.xaml.cs">
+      <DependentUpon>WindowCategories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowInput.xaml.cs">
+      <DependentUpon>WindowInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowLanguages.xaml.cs">
+      <DependentUpon>WindowLanguages.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -71,7 +77,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="WindowCategories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowLanguages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,19 +117,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\turnon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\closeoff.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\closeon.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\maxoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\maxon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\normaloff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\normalon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\stayin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\turnoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\turnon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

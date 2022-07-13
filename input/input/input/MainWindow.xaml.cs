@@ -58,12 +58,23 @@ namespace WpfApp1
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
+    
         }
 
         private void Tgb_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (tb2.Password.Length > 0)
+            {
+                Watermark.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Watermark.Visibility = Visibility.Visible;
+            }
         }
     }
 }

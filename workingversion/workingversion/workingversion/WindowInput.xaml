@@ -1,12 +1,11 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="workingversion.WindowInput"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:workingversion"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Приложение" Height="615" Width="405" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Приложение" Height="600" Width="405" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
 
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -19,10 +18,15 @@
 
     <Window.Resources>
 
+        <Style x:Key="fontcolor" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#FF373737"/>
+        </Style>
+
         <Style x:Key="ComboboxButton" TargetType="Button">
 
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
             <Setter Property="Template">
 
 
@@ -128,6 +132,93 @@
 
         </Style>
 
+        <Style x:Key="Pb" TargetType="PasswordBox">
+
+            <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <EventSetter Event="PasswordChanged" Handler="OnPasswordChanged"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="PasswordBox">
+
+                        <Grid x:Name="Root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
+
+                            <Border x:Name="Background" BorderThickness="2" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}" IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+                                <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsFocused" Value="True">
+
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+
+
+        </Style>
+
+        <ControlTemplate x:Key="Regr" TargetType="Button">
+            <Grid Name="Reg" Height="30" Width="150" Margin="0,0,0,0" HorizontalAlignment="Center">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="14" VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF373737"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Reg}" Value="true">
+                                            <Setter Property="Foreground" Value="#FF8CF7AB"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                            <Setter Property="Foreground" Value="#FFFFE6C1"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                    <Setter Property="Margin" Value="0,2,0,0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
+
+
     </Window.Resources>
 
     <Grid>
@@ -136,8 +227,8 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="200"/>
             <RowDefinition Height="150"/>
-            <RowDefinition Height="135"/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
 
         <Grid Name="ToolBar" Background="Transparent" Grid.Row="0" MouseDown="ToolBar_MouseDown">
@@ -183,12 +274,12 @@
 
         <Grid Name="LogoContainer" Background="Transparent" Grid.Row="1" MouseDown="LogoContainer_MouseDown">
 
-            <Label Content="heathen" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
+            <Label Content="Glossary" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
             <Label Content="e n t e r t a i m e n t" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
 
         </Grid>
 
-        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0,25,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
+        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="25,0,25,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -237,12 +328,12 @@
 
             </Border.Style>
 
-            <Button Content="Авторизоваться" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Авторизоваться" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
 
         <TextBox x:Name="tb1" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,0,25,0" VerticalAlignment="Center" TextChanged="tb1_TextChanged"/>
-        <TextBlock IsHitTestVisible="False" FontSize="16" Text="Введите ваш логин" Grid.Row="2" Margin="40,66,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="Normal" FontStyle="Normal" FontFamily="Times New Roman">
+        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Введите ваш логин" Grid.Row="2" Margin="40,67,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontStyle="Normal" FontFamily="Times New Roman">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -255,27 +346,16 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <TextBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,80,25,0" VerticalAlignment="Bottom"/>
-        <TextBlock IsHitTestVisible="False" FontSize="16" Text="Введите ваш пароль" Grid.Row="2" Margin="40,123,35,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=tb2}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
+        <PasswordBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Pb}" Margin="25,80,25,0" VerticalAlignment="Bottom"/>
+        <TextBlock Name="Watermark" IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,125,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" FontWeight="DemiBold">
+
         </TextBlock>
 
-
-        <CheckBox Content="Запомнить" Name="Tgb" Grid.Row="3" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0">
+        <CheckBox Style="{StaticResource fontcolor}" Content="Запомнить" Name="Tgb" Grid.Row="3" Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0" RenderTransformOrigin="0.475,0.75" Grid.RowSpan="1" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14">
             <CheckBox.Template>
-                <ControlTemplate TargetType="{x:Type CheckBox}">
-                    <StackPanel>
-
-                        <Border Height="20" Width="20" CornerRadius="2" HorizontalAlignment="Left" BorderThickness="2" Background="#FFFFE6C1">
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Height="20" Width="20" CornerRadius="2" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" Background="#FFFFE6C1">
                             <Border.Style>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
@@ -304,7 +384,7 @@
                                 <Image.Style>
                                     <Style>
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType={x:Type CheckBox}}}" Value="True">
+                                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType={x:Type ToggleButton}}}" Value="True">
                                                 <Setter Property="Image.Source" Value="\Resources\stayin.png"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -312,35 +392,22 @@
                                 </Image.Style>
                             </Image>
                         </Border>
-                        <ContentPresenter Margin="30,0,0,0" Content="{TemplateBinding Content}"/>
+                        <ContentPresenter  Margin="5,0,0,0" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </ControlTemplate>
             </CheckBox.Template>
         </CheckBox>
-        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="5" Text="Регистрация" FontFamily="Time New Roman" FontSize="14" FontWeight="DemiBold">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Foreground" Value="#FF373737"/>
-                    <Style.Triggers>
 
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="White" Duration="0:0:0.300"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="#FF373737" Duration="0:0:0.300"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
+        <Grid Grid.Row="4" Name="Registr">
+            <Border BorderBrush="#FF373737" Background="Transparent">
+                <StackPanel>
+                    <Button FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Template="{StaticResource ResourceKey=Regr}" Content="Зарегистрироваться">
+
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+
     </Grid>
 
 </Window>
