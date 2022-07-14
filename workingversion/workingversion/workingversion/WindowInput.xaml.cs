@@ -74,5 +74,32 @@ namespace workingversion
                 Watermark.Visibility = Visibility.Visible;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWin = new MainWindow();
+            mainWin.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AppContext db = new AppContext();
+            List<Table> tables = db.Tables.ToList();
+            bool flag = false;
+            foreach(var scan in tables)
+            {
+                if (scan.Password == tb2.Password)
+                {
+                    WindowLanguages winLang = new WindowLanguages();
+                    winLang.Show();
+                    this.Close();
+                    flag = false;
+                    break;
+                }
+                else flag = true;
+            }
+            if(flag) MessageBox.Show("Введён неверный логин или пароль");
+        }
     }
 }

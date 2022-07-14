@@ -261,7 +261,7 @@
 
             </Border.Style>
 
-            <Button Content="Регистрация" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+            <Button Content="Регистрация" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click"></Button>
 
         </Border>
 
@@ -319,7 +319,7 @@
                 </Style>
             </TextBlock.Style><Run Text="Ваш email адрес"/></TextBlock>
 
-        <Button Content="Войти" Margin="0,45,0,0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="16" Style="{StaticResource Reg}">
+        <Button Content="Войти" Margin="0,45,0,0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="16" Style="{StaticResource Reg}" Click="Button_Click_1">
 
         </Button>
     </Grid>

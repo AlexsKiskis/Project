@@ -233,7 +233,7 @@
 
             </Border.Style>
 
-            <Button Content="Добавить категорию" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_3"></Button>
+            <Button Content="Добавить категорию" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" ></Button>
 
         </Border>
 
@@ -286,7 +286,7 @@
 
             </Border.Style>
 
-            <Button Content="Еда и напитки" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_2"></Button>
+            <Button Content="Еда и напитки" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" ></Button>
 
         </Border>
 
@@ -445,7 +445,7 @@
 
             </Border.Style>
 
-            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click_1"></Button>
+            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" ></Button>
 
         </Border>
 

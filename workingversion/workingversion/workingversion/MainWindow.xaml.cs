@@ -20,9 +20,11 @@ namespace workingversion
     /// </summary>
     public partial class MainWindow : Window
     {
+        AppContext db;
         public MainWindow()
         {
             InitializeComponent();
+            db = new AppContext();
         }
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -63,6 +65,71 @@ namespace workingversion
         private void Tgb_Checked2(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public bool CheckRegistrationFields()
+        {
+            if (tb1.Text == string.Empty || tb2.Text == string.Empty || tb4.Text == string.Empty)
+            {
+                MessageBox.Show("Полностью заполните поля регистарции");
+                return false;
+            }
+            else return true;
+        }
+
+        public bool CheckPassword()
+        {
+            if (tb2.Text == tb3.Text) return true;
+            else
+            {
+                MessageBox.Show("Пароли не сорвпадают");
+                return false;
+            }
+        }
+        public bool CheckReRegistration()
+        {
+            AppContext tb;
+            tb = new AppContext();
+            List<Table> tables = tb.Tables.ToList();
+            bool flag = false;
+            foreach(var scan in tables)
+            {
+                if (scan.Email == tb1.Text || scan.Login == tb4.Text)
+                {
+                    flag = false;
+                    MessageBox.Show("Такой ползователь уже зарегестрирован");
+                    break;
+                }
+                else flag = true;
+            }
+            return flag;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowInput winIn = new WindowInput();
+            Table tb = new Table(tb1.Text, tb4.Text, tb2.Text);
+            if(CheckRegistrationFields() && CheckPassword() && CheckReRegistration())
+            {
+                db.Tables.Add(tb);
+                db.SaveChanges();
+                MessageBox.Show("Регистрация прошла успещно");
+                winIn.Show();
+                this.Close();
+            }
+
+            List<Table> tables = db.Tables.ToList();
+            foreach(var scan in tables)
+            {
+                MessageBox.Show($"{scan.Login}, {scan.Email}, {scan.Password}");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WindowInput winIn = new WindowInput();
+            winIn.Show();
+            this.Close();
         }
     }
 }
