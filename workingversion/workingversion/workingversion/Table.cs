@@ -19,7 +19,7 @@ namespace workingversion
         public string Email
         {
             get { return email; }
-            set { login = value; }
+            set { email = value; }
         }
         public string Password
         {

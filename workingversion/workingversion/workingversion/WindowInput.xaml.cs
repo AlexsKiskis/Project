@@ -89,7 +89,8 @@ namespace workingversion
             bool flag = false;
             foreach(var scan in tables)
             {
-                if (scan.Password == tb2.Password)
+
+                if (scan.Login == tb1.Text && scan.Password == tb2.Password)
                 {
                     WindowLanguages winLang = new WindowLanguages();
                     winLang.Show();

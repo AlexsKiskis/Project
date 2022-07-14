@@ -53,3 +53,34 @@ C:\Users\danil\Desktop\Prjct\Project\workingversion\workingversion\workingversio
 C:\Users\danil\Desktop\Prjct\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.Properties.Resources.resources
 C:\Users\danil\Desktop\Prjct\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.GenerateResource.cache
 C:\Users\danil\Desktop\Prjct\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.CoreCompileInputs.cache
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\workingversion.exe.config
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\workingversion.exe
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\workingversion.pdb
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\EntityFramework.dll
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\System.Data.SQLite.dll
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\EntityFramework.xml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\bin\Debug\System.Data.SQLite.xml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.AssemblyReference.cache
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\MainWindow.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowInput.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowLanguages.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowTest.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\App.g.cs
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion_MarkupCompile.cache
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion_MarkupCompile.lref
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\MainWindow.baml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowCategories.baml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowInput.baml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowLanguages.baml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\WindowTest.baml
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.g.resources
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.Properties.Resources.resources
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.GenerateResource.cache
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.csproj.CoreCompileInputs.cache
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.exe
+C:\Users\danil\Desktop\Новая папка\Project\workingversion\workingversion\workingversion\obj\Debug\workingversion.pdb
