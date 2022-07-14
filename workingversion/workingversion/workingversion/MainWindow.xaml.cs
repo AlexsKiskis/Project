@@ -69,7 +69,7 @@ namespace workingversion
 
         public bool CheckRegistrationFields()
         {
-            if (tb1.Text == string.Empty || tb2.Text == string.Empty || tb4.Text == string.Empty)
+            if (tb1.Text == string.Empty || tb2.Password == string.Empty || tb4.Text == string.Empty)
             {
                 MessageBox.Show("Полностью заполните поля регистарции");
                 return false;
@@ -79,7 +79,7 @@ namespace workingversion
 
         public bool CheckPassword()
         {
-            if (tb2.Text == tb3.Text) return true;
+            if (tb2.Password == tb3.Password) return true;
             else
             {
                 MessageBox.Show("Пароли не сорвпадают");
@@ -108,7 +108,7 @@ namespace workingversion
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WindowInput winIn = new WindowInput();
-            Table tb = new Table(tb1.Text, tb4.Text, tb2.Text);
+            Table tb = new Table(tb1.Text, tb4.Text, tb2.Password);
             if(CheckRegistrationFields() && CheckPassword() && CheckReRegistration())
             {
                 db.Tables.Add(tb);
@@ -130,6 +130,25 @@ namespace workingversion
             WindowInput winIn = new WindowInput();
             winIn.Show();
             this.Close();
+        }
+        private void OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (tb2.Password.Length > 0)
+            {
+                Watermark.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Watermark.Visibility = Visibility.Visible;
+            }
+            if (tb3.Password.Length > 0)
+            {
+                Watermark1.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Watermark1.Visibility = Visibility.Visible;
+            }
         }
     }
 }

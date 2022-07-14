@@ -58,9 +58,5 @@ namespace workingversion
             }
         }
 
-        private void tb1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

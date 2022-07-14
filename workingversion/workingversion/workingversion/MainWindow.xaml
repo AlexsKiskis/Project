@@ -153,6 +153,58 @@
 
         </Style>
 
+        <Style x:Key="Pb" TargetType="PasswordBox">
+
+            <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <EventSetter Event="PasswordChanged" Handler="OnPasswordChanged"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="PasswordBox">
+
+                        <Grid x:Name="Root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
+
+                            <Border x:Name="Background" BorderThickness="2" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}" IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+                                <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsFocused" Value="True">
+
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+
+
+        </Style>
+
     </Window.Resources>
 
     <Grid>
@@ -279,32 +331,12 @@
                 </Style>
             </TextBlock.Style><Run Text="Придумайте логин"/></TextBlock>
 
-        <TextBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,80,25,0" VerticalAlignment="Top" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,90,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=tb2}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style><Run Text="Придумайте пароль"/></TextBlock>
+        <PasswordBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Pb}" Margin="25,80,25,0" VerticalAlignment="Top"/>
+        <TextBlock Name="Watermark" IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,90,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" FontWeight="DemiBold"></TextBlock>
 
+        <PasswordBox x:Name="tb3" Grid.Row="2" Style="{StaticResource Pb}" Margin="25,140,25,0" VerticalAlignment="Top"/>
+        <TextBlock Name="Watermark1" IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,150,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" FontWeight="DemiBold"></TextBlock>
 
-        <TextBox x:Name="tb3" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,138,25,0" VerticalAlignment="Top" Height="35"/>
-        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,148,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=tb3}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style><Run Text="Повторите пароль"></Run></TextBlock>
 
         <TextBox x:Name="tb4" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,195,25,0" VerticalAlignment="Top" Height="35"/>
         <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,205,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
