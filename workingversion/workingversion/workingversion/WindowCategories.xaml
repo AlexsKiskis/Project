@@ -77,30 +77,60 @@
 
         </Style>
 
+        <ControlTemplate x:Key="Regr" TargetType="Button">
+            <Grid Name="Reg" Height="60" Width="320" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="24" VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF373737"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Reg}" Value="true">
+                                            <Setter Property="Foreground" Value="#FF8CF7AB"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                            <Setter Property="Foreground" Value="#FFFFE6C1"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                    <Setter Property="Margin" Value="0,2,0,0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
     </Window.Resources>
 
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="320"/>
-            <ColumnDefinition Width="320"/>
-            <ColumnDefinition Width="320"/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="110"/>
-            <RowDefinition/>
             <RowDefinition Height="280"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="110"/>
             <RowDefinition Height="280"/>
             <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
 
         <Grid Name="brow" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" MouseDown="ToolBar_MouseDown">
-            <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,460,0,460,10" Width="460"></Polygon>
+            <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,560,0,560,10" Width="560"></Polygon>
         </Grid>
 
         <Grid Name="ToolBar" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="5"  Background="Transparent" MouseDown="ToolBar_MouseDown">
@@ -184,7 +214,7 @@
             <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
         </Grid>
 
-        <Border Grid.Row="5" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -237,7 +267,7 @@
 
         </Border>
 
-        <Border Grid.Row="5" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -290,7 +320,7 @@
 
         </Border>
 
-        <Border Grid.Row="5" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -343,7 +373,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -396,7 +426,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -449,7 +479,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -501,6 +531,14 @@
             <Button Content="Семья и друзья" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
 
         </Border>
+
+        <Grid Grid.Row="6" Grid.Column="1" Name="Registr">
+            <Border  Background="Transparent" Margin="0,0,0,50">
+                <StackPanel>
+                    <Button FontFamily="Time New Roman" FontWeight="DemiBold"  Template="{StaticResource ResourceKey=Regr}" Content="Вернуться к выбору языка" Click="Back_Languages"/>
+                </StackPanel>
+            </Border>
+        </Grid>
 
     </Grid>
 

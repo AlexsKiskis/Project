@@ -82,25 +82,23 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="320"/>
-            <ColumnDefinition Width="320"/>
-            <ColumnDefinition Width="320"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="110"/>
-            <RowDefinition/>
+            
             <RowDefinition Height="280"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="110"/>
             <RowDefinition Height="280"/>
             <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
 
         <Grid Name="brow" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" MouseDown="ToolBar_MouseDown">
-            <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,460,0,460,10" Width="460"></Polygon>
+            <Polygon VerticalAlignment="top" HorizontalAlignment="Center" Fill="White" Opacity="0.4" Points="0,10,0,0,560,0,560,10" Width="560"></Polygon>
         </Grid>
 
         <Grid Name="ToolBar" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="5"  Background="Transparent" MouseDown="ToolBar_MouseDown">
@@ -184,7 +182,7 @@
             <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
         </Grid>
 
-        <Border Grid.Row="5" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -237,7 +235,7 @@
 
         </Border>
 
-        <Border Grid.Row="5" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -290,7 +288,7 @@
 
         </Border>
 
-        <Border Grid.Row="5" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="4" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -343,7 +341,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="3" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -396,7 +394,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="0" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">
@@ -449,7 +447,7 @@
 
         </Border>
 
-        <Border Grid.Row="3" Grid.Column="2" Height="200" Width="250" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
+        <Border Grid.Row="2" Grid.Column="1" Height="200" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" CornerRadius="10" BorderThickness="10" Background="Transparent">
             <Border.Style>
 
                 <Style TargetType="{x:Type Border}">

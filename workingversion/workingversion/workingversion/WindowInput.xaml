@@ -399,7 +399,7 @@
         </CheckBox>
 
         <Grid Grid.Row="4" Name="Registr">
-            <Border BorderBrush="#FF373737" Background="Transparent">
+            <Border  Background="Transparent">
                 <StackPanel>
                     <Button FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Template="{StaticResource ResourceKey=Regr}" Content="Зарегистрироваться" Click="Button_Click">
 

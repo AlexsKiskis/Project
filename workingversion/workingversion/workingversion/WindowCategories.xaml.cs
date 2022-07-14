@@ -64,5 +64,12 @@ namespace workingversion
             winTest.Show();
             this.Close();
         }
+
+        private void Back_Languages(object sender, RoutedEventArgs e)
+        {
+            WindowLanguages windowLanguages = new WindowLanguages();
+            windowLanguages.Show();
+            this.Close();
+        }
     }
 }

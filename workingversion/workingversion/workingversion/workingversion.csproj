@@ -161,12 +161,6 @@
     <Resource Include="Resources\maxon.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\normaloff.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\normalon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\stayin.png" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\turnon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\normalon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\normaloff.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

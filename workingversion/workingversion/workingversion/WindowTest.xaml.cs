@@ -70,5 +70,15 @@ namespace workingversion
 
             Result.Text = $"Ваш результат: {point}";
         }
+
+        private void Back_Categories(object sender, RoutedEventArgs e)
+        {
+            
+                WindowCategories windowCategories = new WindowCategories();
+                windowCategories.Show();
+                this.Close();
+
+            
+        }
     }
 }

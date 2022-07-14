@@ -31,9 +31,9 @@
 
                     <ControlTemplate TargetType="Button">
 
-                        <Border Name="border" BorderThickness="0" BorderBrush="White" Background="{TemplateBinding Background}">
+                        <Border Name="border" BorderThickness="4" BorderBrush="White" Background="{TemplateBinding Background}">
 
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                            <ContentPresenter Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
 
                         </Border>
 
@@ -127,7 +127,41 @@
 
         </Style>
 
+        <ControlTemplate x:Key="Regr" TargetType="Button">
+            <Grid Name="Reg" Height="50" Width="320" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}" Background="Transparent" FontSize="28" VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF373737"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Reg}" Value="true">
+                                            <Setter Property="Foreground" Value="#FF8CF7AB"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                            <Setter Property="Foreground" Value="#FFFFE6C1"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path = IsPressed}" Value="true">
+                                    <Setter Property="Margin" Value="0,2,0,0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
     </Window.Resources>
+
 
     <Grid>
 
@@ -228,40 +262,98 @@
         <Grid Name="border0" Grid.Row="0" MouseDown="ToolBar_MouseDown">
             <Border BorderThickness="0,0,0,0" BorderBrush="White" Background="Transparent" Margin="0,0,0,0"/>
         </Grid>
-        <Canvas HorizontalAlignment="Left" Height="269" Margin="10,109,0,0" Grid.Row="1" VerticalAlignment="Top" Width="421" Grid.RowSpan="2">
-            <TextBlock Canvas.Left="119" TextWrapping="Wrap" Text="Гроза" Canvas.Top="10" FontSize="48"/>
-            <RadioButton x:Name="rb1" GroupName="1" Content="Thunderstorm" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
-            <RadioButton x:Name="rb2" GroupName="1" Content="Lightning" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
-            <RadioButton x:Name="rb3" GroupName="1" Content="Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="212" FontSize="36"/>
+        <Canvas HorizontalAlignment="Center" Height="269" Margin="10,109,0,0" Grid.Row="1" VerticalAlignment="Center" Width="421" Grid.RowSpan="2">
+            <TextBlock Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" Canvas.Left="119" TextWrapping="Wrap" Text="Гроза" Canvas.Top="10" FontSize="48"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb1" GroupName="1" Content="Thunderstorm" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb2" GroupName="1" Content="Lightning" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb3" GroupName="1" Content="Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="212" FontSize="36"/>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="269" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="421">
-            <TextBlock Canvas.Left="119" TextWrapping="Wrap" Text="Ливень" Canvas.Top="10" FontSize="48"/>
-            <RadioButton x:Name="rb4" GroupName="2" Content="Hard Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
-            <RadioButton x:Name="rb5" GroupName="2" Content="Thunder" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
-            <RadioButton x:Name="rb6" GroupName="2" Content="Heavy Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Top="212" FontSize="36"/>
+        <Canvas HorizontalAlignment="Center" Height="269" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="421">
+            <TextBlock Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" Canvas.Left="119" TextWrapping="Wrap" Text="Ливень" Canvas.Top="10" FontSize="48"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb4" GroupName="2" Content="Hard Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb5" GroupName="2" Content="Thunder" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb6" GroupName="2" Content="Heavy Rain" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Top="212" FontSize="36"/>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="268" Grid.Row="2" VerticalAlignment="Top" Width="421" Grid.Column="1">
-            <TextBlock Canvas.Left="119" TextWrapping="Wrap" Text="Облако" Canvas.Top="10" FontSize="48"/>
-            <RadioButton x:Name="rb7" GroupName="3" Content="Sky" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
-            <RadioButton x:Name="rb8" GroupName="3" Content="Cloud" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
-            <RadioButton x:Name="rb9" GroupName="3" Content="Wind" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
+        <Canvas HorizontalAlignment="Center" Height="268" Grid.Row="2" VerticalAlignment="Center" Width="421" Grid.Column="1">
+            <TextBlock Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" Canvas.Left="119" TextWrapping="Wrap" Text="Облако" Canvas.Top="10" FontSize="48"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb7" GroupName="3" Content="Sky" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb8" GroupName="3" Content="Cloud" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb9" GroupName="3" Content="Wind" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="268" Margin="0,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="421" Grid.Column="1">
-            <TextBlock Canvas.Left="119" TextWrapping="Wrap" Text="Ветер" Canvas.Top="10" FontSize="48"/>
-            <RadioButton x:Name="rb10" GroupName="4" Content="Wood" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
-            <RadioButton x:Name="rb11" GroupName="4" Content="Land" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
-            <RadioButton x:Name="rb12" GroupName="4" Content="Wind" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
+        <Canvas HorizontalAlignment="Center" Height="268" Margin="0,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="421" Grid.Column="1">
+            <TextBlock Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" Canvas.Left="119" TextWrapping="Wrap" Text="Ветер" Canvas.Top="10" FontSize="48"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb10" GroupName="4" Content="Wood" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb11" GroupName="4" Content="Land" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb12" GroupName="4" Content="Wind" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="268" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="421" Grid.Column="2">
-            <TextBlock Canvas.Left="119" TextWrapping="Wrap" Text="Оползень" Canvas.Top="10" FontSize="48"/>
-            <RadioButton x:Name="rb13" GroupName="5" Content="Landslide" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
-            <RadioButton x:Name="rb14" GroupName="5" Content="Earthquake" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
-            <RadioButton x:Name="rb15" GroupName="5" Content="Blizzard" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
+        <Canvas HorizontalAlignment="Center" Height="268" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="421" Grid.Column="2">
+            <TextBlock Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" Canvas.Left="119" TextWrapping="Wrap" Text="Оползень" Canvas.Top="10" FontSize="48"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb13" GroupName="5" Content="Landslide" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="67" Canvas.Left="10" Canvas.Top="79" Width="271" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb14" GroupName="5" Content="Earthquake" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="146" FontSize="36"/>
+            <RadioButton Foreground="#FF373737" FontFamily="Time New Roman" FontWeight="DemiBold" x:Name="rb15" GroupName="5" Content="Blizzard" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="221" FontSize="36"/>
         </Canvas>
-        <Button Content="Закончить тест" Grid.Column="2" HorizontalAlignment="Left" Margin="52,54,0,0" Grid.Row="3" VerticalAlignment="Top" Width="203" Height="68" FontSize="18" Click="Button_Click"/>
-        <TextBox x:Name="Result" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="96,235,0,0" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
 
+        <Border Grid.Row="3" Grid.Column="2" Height="50" Width="220" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="1" BorderThickness="4" Background="#FFFF8181">
+            <Border.Style>
 
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FF99A3FB"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Style="{StaticResource ComboboxButton}" Content="Закончить тест" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="220" Height="50" FontSize="24" FontWeight="DemiBold" FontFamily="Time New Roman" Click="Button_Click"></Button>
+        </Border>
+
+        <TextBox x:Name="Result" Grid.Column="2" HorizontalAlignment="Center" Height="50" Margin="0,245,0,0" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" FontFamily="Time New Roman" FontSize="24" FontWeight="DemiBold" Foreground="#FF373737" Background="Transparent"/>
+
+        <Grid Grid.Row="3" Grid.Column="1" Name="Registr">
+            <Border  Background="Transparent" Margin="0,300,0,0">
+                <StackPanel>
+                    <Button FontFamily="Time New Roman" FontWeight="DemiBold" Template="{StaticResource ResourceKey=Regr}" Content="Вернуться в категории" Click="Back_Categories"/>
+                </StackPanel>
+            </Border>
+        </Grid>
 
 
     </Grid>
