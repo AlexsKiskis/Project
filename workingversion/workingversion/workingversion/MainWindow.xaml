@@ -16,47 +16,312 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <Button Content="Регистрация" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}"></Button>
+    <Window.Resources>
 
-    </Border>
+        <Style x:Key="fontcolor" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#FF373737"/>
+        </Style>
+
+        <Style x:Key="Reg" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="110" />
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Reg" SnapsToDevicePixels="True" Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsFocused" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ComboboxButton" TargetType="Button">
+
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="Template">
 
 
-    <TextBox x:Name="tb1" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,20,25,0" VerticalAlignment="Top" TextChanged="tb1_TextChanged" Height="35"/>
-    <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,30,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontStyle="Normal" FontFamily="Times New Roman" Height="16">
-        <TextBlock.Style>
-            <Style TargetType="{x:Type TextBlock}">
-                <Setter Property="Visibility" Value="Collapsed"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Text, ElementName=tb1}" Value="">
-                        <Setter Property="Visibility" Value="Visible"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </TextBlock.Style><Run Text="Придумайте логин"/></TextBlock>
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="Button">
+
+                        <Border Name="border" BorderThickness="0" BorderBrush="White" Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.100" To="2,2,0,0"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.100" To="0"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </EventTrigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="Tb" TargetType="TextBox">
+
+            <Setter Property="Background" Value="#FFFFE6C1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#FF373737"/>
+            <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
 
 
-    <PasswordBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Pb}" Margin="25,80,25,0" VerticalAlignment="Top"/>
-    <TextBlock Name="Watermark" IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,90,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" FontWeight="DemiBold"></TextBlock>
+            <Setter Property="Template">
 
-    <PasswordBox x:Name="tb3" Grid.Row="2" Style="{StaticResource Pb}" Margin="25,140,25,0" VerticalAlignment="Top"/>
-    <TextBlock Name="Watermark1" IsHitTestVisible="False" FontSize="14" Text="Введите ваш пароль" Grid.Row="2" Margin="40,150,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontFamily="Times New Roman" FontWeight="DemiBold"></TextBlock>
+                <Setter.Value>
 
-    <TextBox x:Name="tb4" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,195,25,0" VerticalAlignment="Top" Height="35"/>
-    <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,205,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
-        <TextBlock.Style>
-            <Style TargetType="{x:Type TextBlock}">
-                <Setter Property="Visibility" Value="Collapsed"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Text, ElementName=tb4}" Value="">
-                        <Setter Property="Visibility" Value="Visible"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </TextBlock.Style><Run Text="Ваш email адрес"/></TextBlock>
+                    <ControlTemplate TargetType="TextBox">
 
-    <Button Content="Войти" Margin="0,45,0,0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="16" Style="{StaticResource Reg}">
+                        <Grid x:Name="Root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
 
-    </Button>
+                            <Border x:Name="Background" BorderThickness="2" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}" IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+                                <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsFocused" Value="True">
+
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="Background" Value="#FFFDD7AE"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="ToolBar" Background="Transparent" Grid.Row="0" MouseDown="ToolBar_MouseDown">
+
+            <Polygon Fill="White" Opacity="0.4" Points="100,10,100,0,300,0,300,10"></Polygon>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Image Name="MinButton" Margin="5,5,0,5" Height="20" Width="20" MouseDown="MinButton_MouseDown">
+
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="\Resources\turnoff.jpg"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
+                                    <Setter Property="Source" Value="\Resources\turnon.jpg"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+
+                </Image>
+
+                <Image Name="ExitButton" Margin="5,5,5,5" Height="20" Width="25" MouseDown="ExitButton_MouseDown">
+
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="\Resources\closeoff.jpg"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=ExitButton}" Value="True">
+                                    <Setter Property="Source" Value="\Resources\closeon.jpg"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+
+                </Image>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Name="LogoContainer" Background="Transparent" Grid.Row="1" MouseDown="LogoContainer_MouseDown">
+
+            <Label Content="Glossary" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" AutomationProperties.IsOffscreenBehavior="Onscreen" FontFamily="Times New Roman" FontWeight="Bold" FontSize="72" FontStyle="Normal" Visibility="Visible" Foreground="#FF373737"/>
+            <Label Content="e n t e r t a i m e n t" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF373737"/>
+
+        </Grid>
+
+        <Border Grid.Row="3" Height="35" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="25,5,25,0" CornerRadius="2" BorderThickness="2" Background="#FFFF8181">
+            <Border.Style>
+
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush" Value="#FF8CF7AB"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="#FFB0B8FF"/>
+
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="White"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+
+                            <BeginStoryboard>
+
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0.100" To="#FFB0B8FF"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Border.Style>
+
+            <Button Content="Регистрация" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click"></Button>
+
+        </Border>
+
+
+        <TextBox x:Name="tb1" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,20,25,0" VerticalAlignment="Top" TextChanged="tb1_TextChanged" Height="35"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,30,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontStyle="Normal" FontFamily="Times New Roman" Height="16">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb1}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style><Run Text="Придумайте логин"/></TextBlock>
+
+        <TextBox x:Name="tb2" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,80,25,0" VerticalAlignment="Top" Height="35"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,90,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb2}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style><Run Text="Придумайте пароль"/></TextBlock>
+
+
+        <TextBox x:Name="tb3" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,138,25,0" VerticalAlignment="Top" Height="35"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,148,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb3}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style><Run Text="Повторите пароль"></Run></TextBlock>
+
+        <TextBox x:Name="tb4" Grid.Row="2" Style="{StaticResource Tb}" Margin="25,195,25,0" VerticalAlignment="Top" Height="35"/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Grid.Row="2" Margin="40,205,40,0" VerticalAlignment="Top" Foreground="#FF373737" FontWeight="DemiBold" FontFamily="Times New Roman" Height="16">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tb4}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style><Run Text="Ваш email адрес"/></TextBlock>
+
+        <Button Content="Войти" Margin="0,45,0,0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontFamily="Time New Roman" FontWeight="DemiBold" FontSize="16" Style="{StaticResource Reg}" Click="Button_Click_1">
+
+        </Button>
     </Grid>
 
 </Window>
