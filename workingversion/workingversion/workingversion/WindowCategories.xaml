@@ -445,7 +445,7 @@
 
             </Border.Style>
 
-            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" ></Button>
+            <Button Content="Погода и времена года" FontFamily="Time New Roman" FontWeight="Bold" FontSize="14" Style="{StaticResource ComboboxButton}" Click="Button_Click" ></Button>
 
         </Border>
 

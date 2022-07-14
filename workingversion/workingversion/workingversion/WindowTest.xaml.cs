@@ -58,5 +58,17 @@ namespace workingversion
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int point = 0;
+
+            if (rb1.IsChecked == true) point++;
+            if (rb6.IsChecked == true) point++;
+            if (rb8.IsChecked == true) point++;
+            if (rb12.IsChecked == true) point++;
+            if (rb13.IsChecked == true) point++;
+
+            Result.Text = $"Ваш результат: {point}";
+        }
     }
 }

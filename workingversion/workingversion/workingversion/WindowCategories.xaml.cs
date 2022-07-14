@@ -57,5 +57,12 @@ namespace workingversion
                 this.DragMove();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowTest winTest = new WindowTest();
+            winTest.Show();
+            this.Close();
+        }
     }
 }
