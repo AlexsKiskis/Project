@@ -131,5 +131,25 @@ namespace workingversion
             winIn.Show();
             this.Close();
         }
+        private void OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (tb2.Password.Length > 0)
+            {
+                Watermark.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Watermark.Visibility = Visibility.Visible;
+            }
+            if (tb3.Password.Length > 0)
+            {
+                Watermark1.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Watermark1.Visibility = Visibility.Visible;
+            }
+        }
+
     }
 }

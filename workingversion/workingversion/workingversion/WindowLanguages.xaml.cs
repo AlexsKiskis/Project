@@ -60,8 +60,8 @@ namespace workingversion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var winTest = new WindowTest();
-            winTest.Show();
+            var winCates = new WindowCategories();
+            winCates.Show();
             this.Close();
         }
     }
